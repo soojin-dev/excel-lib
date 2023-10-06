@@ -8,13 +8,13 @@ import java.util.List;
 public class DefaultDataFormatDecider implements DataFormatDecider {
 
 	private static final String CURRENT_FORMAT = "#,##0";
-	private static final String FLOAT_FORMAT_2_DECIMAL_PLACES = "#,##0.00";
+	private static final String FLOAT_FORMAT_1_DECIMAL_PLACES = "#,##0.0";
 	private static final String DEFAULT_FORMAT = "";
 
 	@Override
 	public short getDataFormat(DataFormat dataFormat, Class<?> type) {
 		if (isFloatType(type)) {
-			return dataFormat.getFormat(FLOAT_FORMAT_2_DECIMAL_PLACES);
+			return dataFormat.getFormat(FLOAT_FORMAT_1_DECIMAL_PLACES);
 		}
 
 		if (isIntegerType(type)) {
